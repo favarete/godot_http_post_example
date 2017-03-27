@@ -63,18 +63,18 @@ func send_test_POST(POST_body):
 	
 #DATA TO SEND
 func get_mock_data():
-	var fake_data = { 
+	var fake_data = {
 		"fake_data": [{
-			"something": "purchase",
-			"session": {
+			"something": "purchase_item",
+		"	session": {
 				"time": "2010-07-09T03:19:20.041Z",
-				"id": "12345678910"
+				"id": "1234567891012345678910"
 			},
-			"otherTime": "2014-07-09T03:17:42.772Z",
 			"attributes": {
 				"_item_total_price": "$1000.99",
-				"_product_id":"9876543210"
-			}
+				"_product_id": "9876543210"
+			},
+			"otherTime": "2014-07-09T03:17:42.772Z"
 		}]
 	}
 	return(fake_data.to_json().to_utf8())
