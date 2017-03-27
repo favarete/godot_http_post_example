@@ -18,7 +18,6 @@ func connect_to_server():
 	assert(HTTP.get_status() == HTTPClient.STATUS_CONNECTED)
 	print("Conection Result: ", status_as_string(HTTP.get_status()))
 
-	
 func send_test_POST(POST_body):
 	var Content_Length = POST_body.size()
 	
@@ -33,7 +32,6 @@ func send_test_POST(POST_body):
 		print("Requesting...")
 		OS.delay_msec(300)
 	
-	#Error happens here when Content_Length > 222 for this fake_data
 	assert(HTTP.get_status() == HTTPClient.STATUS_BODY or HTTP.get_status() == HTTPClient.STATUS_CONNECTED)
 	
 	#SERVER RESPONSE IF SUCCESS
@@ -65,10 +63,8 @@ func send_test_POST(POST_body):
 	
 #DATA TO SEND
 func get_mock_data():
-	var fake_data = {
-		"fake_data": 
-		[
-		{
+	var fake_data = { 
+		"fake_data": [{
 			"something": "purchase",
 			"session": {
 				"time": "2010-07-09T03:19:20.041Z",
@@ -79,8 +75,7 @@ func get_mock_data():
 				"_item_total_price": "$1000.99",
 				"_product_id":"9876543210"
 			}
-		}
-		]
+		}]
 	}
 	return(fake_data.to_json().to_utf8())
 	
