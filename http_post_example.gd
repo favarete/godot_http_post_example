@@ -66,7 +66,7 @@ func get_mock_data():
 	var fake_data = {
 		"fake_data": [{
 			"something": "purchase_item",
-		"	session": {
+			"session": {
 				"time": "2010-07-09T03:19:20.041Z",
 				"id": "1234567891012345678910"
 			},
