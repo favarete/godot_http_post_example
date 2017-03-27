@@ -20,10 +20,7 @@ func connect_to_server():
 
 	
 func send_test_POST(POST_body):
-	#It doesn't work!
-	#var Content_Length = var2bytes(POST_body).size()
-	#It Works!
-	var Content_Length = 222 #Limit for this body?
+	var Content_Length = POST_body.size()
 	
 	var POST_headers = ["Content-Type: application/json", 
 						"Content-Length: " + str(Content_Length)]
