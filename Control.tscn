@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=1]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Button\n\nfunc _ready():\n\tconnect(\"pressed\", self, \"_on_pressed\")\n\tpass\n\nfunc _on_pressed():\n\thttp_post_example.connect_to_server()"
+
+[sub_resource type="GDScript" id=2]
+
+script/source = "extends Button\n\nfunc _ready():\n\tconnect(\"pressed\", self, \"_on_pressed\")\n\tpass\n\nfunc _on_pressed():\n\thttp_post_example.send_test_POST(http_post_example.get_mock_data())"
+
+[node name="Control" type="Control"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 200.0
+margin/bottom = 350.0
+
+[node name="Connect" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 41.0
+margin/top = 109.0
+margin/right = 155.0
+margin/bottom = 155.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "connect"
+flat = false
+script/script = SubResource( 1 )
+
+[node name="Send" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 41.0
+margin/top = 169.0
+margin/right = 155.0
+margin/bottom = 215.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "send"
+flat = false
+script/script = SubResource( 2 )
+
+
